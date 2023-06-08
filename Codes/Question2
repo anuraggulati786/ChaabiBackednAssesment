@@ -1,0 +1,23 @@
+def solve(extension_list, names_of_files):
+    extension_type_dict = {}
+    for item in extension_list.split(';'):
+        extension, file_type = item.split(',')
+        extension_type_dict[extension] = file_type
+
+    res = {}
+    for name in names_of_files:
+        if '.' in name:
+            extension = name.split('.')[-1]
+            if extension in extension_type_dict:
+                res[name] = extension_type_dict[extension]
+            else:
+                res[name] = "unknown"
+        else:
+            res[name] = "unknown"
+
+    return res
+
+extension_list = "xls,spreadsheet;xlsx,spreadsheet;jpg,image"
+names_of_files = ["abc.jpg", "xyz.xls", "text.csv", "123"]
+output = solve(extension_list, names_of_files)
+print(output)
