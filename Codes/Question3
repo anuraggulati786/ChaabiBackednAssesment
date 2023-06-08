@@ -1,0 +1,19 @@
+def sort_list(list_of_dicts, key):
+    return sorted(list_of_dicts, key=lambda x: x[key])
+
+def main():
+    arr = [
+        {"fruit": "orange", "color": "orange"},
+        {"fruit": "apple", "color": "red"},
+        {"fruit": "banana", "color": "yellow"},
+        {"fruit": "blueberry", "color": "blue"}
+    ]
+
+    sorted_by_fruit = sort_list(arr, "fruit")
+    print(sorted_by_fruit)
+
+    sorted_by_color = sort_list(arr, "color")
+    print(sorted_by_color)
+
+if __name__ == "__main__":
+    main()
