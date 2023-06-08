@@ -1,0 +1,17 @@
+from datetime import datetime, timedelta
+
+def get_prev_date(date, n):
+    date_obj = datetime.strptime(date, '%y-%m-%d')
+
+    time_for_n_days = timedelta(days=n)
+
+    previous_date = date_obj - time_for_n_days
+
+    prev_date = previous_date.strftime('%y-%m-%d')
+
+    return prev_date
+
+input_date = '16-12-10'
+days_before = 11
+result = get_prev_date(input_date, days_before)
+print(result)
